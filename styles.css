@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #87A8A4;
+}
+
+.table {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    width: 100vw;
+    height: 70vh;
+    grid-template-columns: repeat(3, auto);
+    
+}
+
+.title {
+    margin: 0;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    color: #D9CAB3;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #D9CAB3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* Set the borders of the cells */
+.cell:first-child,
+.cell:nth-child(4),
+.cell:nth-child(7) {
+    border-right: none;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-bottom: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+    border-left: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-top: none;
+}
+
+/* Can't click on an already marked cell */
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;    
+}
+
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before {
+    background-color: #986D8E;
+}
+
+.table.x .cell:not(.x):not(.circle):hover::before,
+.table.x .cell:not(.x):not(.circle):hover::after,
+.table.circle .cell:not(.x):not(.circle):hover::before {
+    background-color: #D9CAB3;
+}
+
+/* x mark */
+.cell.x::before,
+.cell.x::after,
+.table.x .cell:not(.x):not(.circle):hover::before,
+.table.x .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;
+    width: 55px;
+    height: 10px;
+}
+
+.cell.x::before,
+.table.x .cell:not(.x):not(.circle):hover::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after,
+.table.x .cell:not(.x):not(.circle):hover::after {
+    transform: rotate(-45deg);
+}
+
+/* Circle Mark */
+.cell.circle::before,
+.cell.circle::after,
+.table.circle .cell:not(.x):not(.circle):hover::before,
+.table.circle .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cell.circle::before,
+.table.circle .cell:not(.x):not(.circle):hover::before {
+    width: 55px;
+    height: 55px;
+}
+
+.cell.circle::after,
+.table.circle .cell:not(.x):not(.circle):hover::after {
+    width: 40px;
+    height: 40px;
+    background-color: #87A8A4;
+}
+
+/* Winning message screen */
+.winning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #D9CAB3;
+    justify-content: center;
+    align-items: center;
+    color: #87A8A4;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.winning-message button {
+    font-size: 3rem;
+    background-color: #87A8A4;
+    border: 1px solid #D9CAB3;
+    padding: .25em.5em;
+    cursor: pointer;
+    color: #D9CAB3;
+}
+
+.winning-message button:hover {
+    background: #D9CAB3;
+    border-color: #87A8A4;
+    color: #87A8A4;
+}
+
+.winning-message.show {
+    display: flex;
+}
+

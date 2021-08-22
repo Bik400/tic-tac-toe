@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src='script.js' defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <div class='container'>
+        <h1 class='title'>Tic-Tac-Toe</h1>
+        <div class='table' id='table'>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+            <div class='cell' data-cells></div>
+        </div>
+
+        <div class='winning-message' id='winningMessage'>
+            <div data-winning-message-text>X Wins</div>
+            <button id='restartButton'>Restart</button>
+        </div>
+    </div>
+</body>
+</html>
